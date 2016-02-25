@@ -1,3 +1,18 @@
+function StringHaveFirstNum(num,a)
+{
+	var result = "";
+	while(num != 0)
+	{
+		if((num % 10) == a)
+		{
+			result = "Fizz";
+			break;
+		}
+		else
+			num = parseInt(num / 10);
+	}
+	return result;
+}
 function toCorrectString(num,a,b,c)
 {
 	var result = "";
@@ -9,6 +24,10 @@ function toCorrectString(num,a,b,c)
 		result += "Whizz";
 	if(result.length == 0)
 		result += num.toString();
+
+	var checkHaveFirstNum = StringHaveFirstNum(num,a);
+	if(checkHaveFirstNum.length != 0)
+		result = checkHaveFirstNum;
 	return  result;
 }
 
